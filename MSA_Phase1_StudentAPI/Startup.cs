@@ -27,7 +27,7 @@ namespace MSA_Phase1_StudentAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = GetEnvironmentVariable ('DBCONNECTION');
+            var connection = Environment.GetEnvironmentVariable ("DBCONNECTION");
             services.AddDbContext<StudentContext>(options => options.UseSqlServer(connection));
             services.AddControllers();
 

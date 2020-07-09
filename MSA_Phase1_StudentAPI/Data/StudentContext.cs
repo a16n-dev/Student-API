@@ -14,6 +14,10 @@ public class StudentContext : DbContext
     // Use DbSet<Student> to query or read and 
     // write information about A Student
     public DbSet<Student> Student { get; set; }
+
+    // Use DbSet<Address> to query or read and 
+    // write information about an Address
+    public DbSet<Address> Address { get; set; }
     public static System.Collections.Specialized.NameValueCollection AppSettings { get; }
 
     // configure the database to be used by this context

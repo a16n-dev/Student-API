@@ -7,14 +7,14 @@ public class Student
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int studentId { get; set; }
+    public int StudentId { get; set; }
     [Required, MaxLength(100)]
-    public string firstName { get; set; }
-    public string middleName { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
     [Required]
-    public string lastName { get; set; }
-    public string emailAddress { get; set; }
-    public int phoneNumber { get; set; }
+    public string LastName { get; set; }
+    public string EmailAddress { get; set; }
+    public int PhoneNumber { get; set; }
     [Timestamp]
-    public DateTime timeCreated { get; set; }
+    public DateTime TimeCreated { get; set; }
 }

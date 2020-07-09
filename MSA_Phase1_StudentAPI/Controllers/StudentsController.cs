@@ -14,12 +14,14 @@ namespace MSA_Phase1_StudentAPI.Controllers
     {
         private readonly StudentContext _context;
 
+        //constructor
         public StudentsController(StudentContext context)
         {
             _context = context;
         }
 
         // GET: api/Students
+        // Get a list of all students in database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudent()
         {
@@ -27,6 +29,7 @@ namespace MSA_Phase1_StudentAPI.Controllers
         }
 
         // GET: api/Students/5
+        // Get the details of a student, specified by their student id
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(int id)
         {
@@ -41,12 +44,11 @@ namespace MSA_Phase1_StudentAPI.Controllers
         }
 
         // PUT: api/Students/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Update the details of a student with the provided id
         [HttpPut("{id}")]
         public async Task<IActionResult> PutStudent(int id, Student student)
         {
-            if (id != student.studentId)
+            if (id != student.StudentId)
             {
                 return BadRequest();
             }
@@ -73,18 +75,18 @@ namespace MSA_Phase1_StudentAPI.Controllers
         }
 
         // POST: api/Students
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Add a student with the provided details
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
         {
             _context.Student.Add(student);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudent", new { id = student.studentId }, student);
+            return CreatedAtAction("GetStudent", new { id = student.StudentId }, student);
         }
 
         // DELETE: api/Students/5
+        // Delete a student with the given student ID
         [HttpDelete("{id}")]
         public async Task<ActionResult<Student>> DeleteStudent(int id)
         {
@@ -100,9 +102,11 @@ namespace MSA_Phase1_StudentAPI.Controllers
             return student;
         }
 
+
+        //helper methods
         private bool StudentExists(int id)
         {
-            return _context.Student.Any(e => e.studentId == id);
+            return _context.Student.Any(e => e.StudentId == id);
         }
     }
 }

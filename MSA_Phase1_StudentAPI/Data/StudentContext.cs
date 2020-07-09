@@ -30,6 +30,6 @@ public class StudentContext : DbContext
 
         // schoolSIMSConnection is the name of the key that
         // contains the has the connection string as the value
-        optionsBuilder.UseSqlServer(configuration.GetConnectionString("schoolSIMSConnection"));
+        optionsBuilder.UseSqlServer(GetEnvironmentVariable ('DBCONNECTION'););
     }
 }

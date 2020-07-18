@@ -14,7 +14,7 @@ public class Student
     [Required]
     public string LastName { get; set; }
     public string EmailAddress { get; set; }
-    public string PhoneNumber { get; set; }
-    [Timestamp]
-    public DateTime TimeCreated { get; set; }
+    public int PhoneNumber { get; set; }
+    //[Timestamp]
+    //public DateTime TimeCreated { get; set; }
 }

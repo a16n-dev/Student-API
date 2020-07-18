@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MSA_Phase1_StudentAPI.Migrations.Address
+namespace MSA_Phase1_StudentAPI.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    [Migration("20200709001233_AddAddressTable")]
-    partial class AddAddressTable
+    [Migration("20200718080330_Edit-Student-Phone")]
+    partial class EditStudentPhone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,8 +83,8 @@ namespace MSA_Phase1_StudentAPI.Migrations.Address
                     b.Property<string>("MiddleName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TimeCreated")
                         .IsConcurrencyToken()

@@ -81,8 +81,8 @@ namespace MSA_Phase1_StudentAPI.Migrations
                     b.Property<string>("MiddleName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TimeCreated")
                         .IsConcurrencyToken()
